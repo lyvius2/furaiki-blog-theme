@@ -1,0 +1,1560 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0' name='viewport'/>
+    <link href='https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap' rel='stylesheet'/>
+    <b:include data='blog' name='all-head-content'/>
+    <title><data:blog.pageTitle/></title>
+    
+    <b:skin><![CDATA[
+/* ========================================
+   네이버 블로그 스타일 Blogger 템플릿
+   ======================================== */
+
+/* 기본 리셋 및 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 숫자만 Georgia로 표시하는 폰트 설정 */
+@font-face {
+    font-family: 'NanumMyeongjoWithNumbers';
+    src: local('Nanum Myeongjo'), local('나눔명조');
+    unicode-range: U+0020-002F, U+003A-007F, U+00A0-00FF, U+0100-017F, U+0180-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF, U+2100-214F, U+2190-21FF, U+2200-22FF, U+2C60-2C7F, U+2E00-2E7F, U+3000-303F, U+3040-309F, U+30A0-30FF, U+3130-318F, U+3200-32FF, U+3300-33FF, U+3400-4DBF, U+4E00-9FFF, U+A000-A48F, U+A490-A4CF, U+AC00-D7AF, U+D7B0-D7FF, U+F900-FAFF, U+FE00-FE0F, U+FE10-FE1F, U+FE20-FE2F, U+FE30-FE4F, U+FE50-FE6F, U+FE70-FEFF, U+FF00-FFEF, U+FFF0-FFFF;
+}
+
+@font-face {
+    font-family: 'NumberFont';
+    src: local('Georgia');
+    unicode-range: U+0030-0039;
+}
+
+body {
+    font-family: 'NumberFont', 'NanumMyeongjoWithNumbers', 'Nanum Myeongjo', '나눔명조', Georgia, serif;
+    background-color: #f5f6f7;
+    color: #333;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* 모든 요소에 나눔명조 적용 (숫자는 NumberFont를 통해 Georgia로 표시) */
+body * {
+    font-family: 'NumberFont', 'NanumMyeongjoWithNumbers', 'Nanum Myeongjo', '나눔명조', Georgia, serif;
+}
+
+a {
+    color: #03c75a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #00a844;
+}
+
+/* 전체 컨테이너 */
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* 헤더 영역 */
+#header {
+    background: #fff;
+    color: #333;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    border-bottom: none;
+}
+
+/* 왼쪽 검은색 세로선 */
+.header-vertical-line {
+    width: 2px;
+    background-color: #000;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+/* 헤더 콘텐츠 영역 */
+.header-content {
+    flex: 1;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 네비게이션 */
+#nav {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#nav li {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#nav li.nav-divider {
+    color: #A9A9A9;
+    font-size: 14px;
+    margin: 0 12px;
+    line-height: 1;
+}
+
+#nav a {
+    color: #A9A9A9;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0;
+    display: block;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    transition: color 0.2s;
+}
+
+#nav a:hover,
+#nav a.nav-link.active {
+    color: #333;
+}
+
+/* 블로그 제목 */
+.header-title {
+    margin: 0;
+}
+
+#header h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.4;
+    color: #333;
+}
+
+#header h1 a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 메인 컨텐츠 영역 */
+#content-wrapper {
+    display: flex;
+    padding: 30px 40px;
+    gap: 20px;
+}
+
+/* 메인 영역 */
+#main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 포스트 스타일 */
+.post {
+    background: #fff;
+    border: 1px solid #e4e8eb;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.post:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 포스트 썸네일 이미지 */
+.post-thumbnail {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #f5f6f7;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.post:hover .post-thumbnail img {
+    transform: scale(1.05);
+}
+
+.post-header {
+    padding: 25px 30px 15px;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.post-title a {
+    color: #333;
+}
+
+.post-title a:hover {
+    color: #03c75a;
+}
+
+.post-meta {
+    color: #8b95a1;
+    font-size: 13px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-body {
+    padding: 0 30px 25px;
+    color: #505050;
+    line-height: 1.8;
+}
+
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px auto;
+    display: block;
+}
+
+.post-footer {
+    padding: 15px 30px;
+    background-color: #fafbfc;
+    border-top: 1px solid #e4e8eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-labels {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.post-labels a {
+    background-color: #f1f3f5;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.post-labels a:hover {
+    background-color: #03c75a;
+    color: #fff;
+}
+
+.read-more {
+    background-color: #03c75a;
+    color: #fff !important;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.read-more:hover {
+    background-color: #00a844;
+}
+
+/* 사이드바 */
+#sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.sidebar-widget {
+    background: #fff;
+    border: 1px solid #e4e8eb;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.sidebar-widget h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f5f6f7;
+}
+
+/* 프로필 위젯 */
+.profile-widget {
+    text-align: left;
+}
+
+.profile-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.profile-image-link,
+.profile-image-wrapper {
+    flex-shrink: 0;
+}
+
+.profile-widget img {
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    border: 1px solid #e4e8eb;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.profile-description {
+    color: #8b95a1;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* 카테고리 리스트 */
+.category-list {
+    list-style: none;
+}
+
+.category-list li {
+    border-bottom: 1px solid #f5f6f7;
+    padding: 10px 0;
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+.category-list a {
+    display: flex;
+    justify-content: space-between;
+    color: #505050;
+}
+
+.category-list a:hover {
+    color: #03c75a;
+}
+
+.category-count {
+    color: #8b95a1;
+    font-size: 12px;
+}
+
+/* 계층적 카테고리 구조 */
+.category-root {
+    font-weight: 600;
+    color: #333;
+}
+
+.category-root > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-root .category-toggle {
+    display: inline-block;
+    width: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-right: 5px;
+}
+
+.category-root > a > span:not(.category-toggle):not(.category-count) {
+    flex: 1;
+}
+
+.category-root.collapsed .category-toggle {
+    transform: rotate(-90deg);
+}
+
+.category-subcategories {
+    list-style: none;
+    margin-top: 5px;
+    margin-left: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.category-root.collapsed + .category-subcategories {
+    max-height: 0;
+}
+
+.category-sub {
+    border-bottom: none;
+    padding: 8px 0;
+    padding-left: 0;
+}
+
+.category-sub:last-child {
+    border-bottom: none;
+}
+
+.category-sub a {
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-sub a > span:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.category-sub a:hover {
+    color: #03c75a;
+}
+
+/* 최근 글 리스트 */
+.recent-posts-list {
+    list-style: none;
+}
+
+.recent-posts-list li {
+    border-bottom: 1px solid #f5f6f7;
+    padding: 12px 0;
+}
+
+.recent-posts-list li:last-child {
+    border-bottom: none;
+}
+
+.recent-posts-list a {
+    color: #333;
+    font-size: 13px;
+    display: block;
+    line-height: 1.5;
+}
+
+.recent-posts-list a:hover {
+    color: #03c75a;
+}
+
+.recent-post-date {
+    color: #8b95a1;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 검색 박스 */
+.search-box {
+    display: flex;
+    gap: 8px;
+}
+
+.search-box input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #e4e8eb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.search-box input[type="text"]:focus {
+    outline: none;
+    border-color: #03c75a;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background-color: #fafbfc;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+    background-color: #e4e8eb;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.pagination a,
+.pagination span {
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #e4e8eb;
+    border-radius: 6px;
+    color: #505050;
+    transition: all 0.2s;
+}
+
+.pagination a:hover {
+    background-color: #03c75a;
+    color: #fff;
+    border-color: #03c75a;
+}
+
+.pagination .current {
+    background-color: #03c75a;
+    color: #fff;
+    border-color: #03c75a;
+}
+
+/* 푸터 */
+#footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 30px 40px;
+    text-align: center;
+    font-size: 13px;
+}
+
+#footer p {
+    margin: 5px 0;
+}
+
+#footer a {
+    color: #3498db;
+}
+
+/* 반응형 디자인 */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    #wrapper {
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    #content-wrapper {
+        padding: 20px;
+    }
+    
+    .header-content {
+        padding: 18px 25px;
+        gap: 14px;
+    }
+    
+    .header-vertical-line {
+        width: 2px;
+    }
+    
+    #header h1 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+    
+    #nav a {
+        font-size: 14px;
+    }
+    
+    #nav li.nav-divider {
+        margin: 0 12px;
+    }
+    
+    #nav,
+    #footer {
+        padding: 25px;
+    }
+}
+
+/* 태블릿 세로 모드 (768px 이하) */
+@media (max-width: 768px) {
+    #content-wrapper {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    #sidebar {
+        width: 100%;
+    }
+    
+    .header-content {
+        padding: 15px 15px;
+        gap: 12px;
+    }
+    
+    .header-vertical-line {
+        width: 2px;
+    }
+    
+    #header h1 {
+        font-size: 18px;
+        line-height: 1.3;
+    }
+    
+    #nav a {
+        font-size: 13px;
+    }
+    
+    #nav li.nav-divider {
+        margin: 0 10px;
+        font-size: 13px;
+    }
+    
+    #nav ul {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    
+    #nav li {
+        padding: 10px 0;
+    }
+    
+    .post {
+        border-radius: 8px;
+    }
+    
+    .post-thumbnail {
+        height: 200px;
+    }
+    
+    .post-header {
+        padding: 20px;
+    }
+    
+    .post-title {
+        font-size: 20px;
+    }
+    
+    .post-body {
+        padding: 0 20px 20px;
+    }
+    
+    .post-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    
+    .sidebar-widget {
+        padding: 20px;
+    }
+    
+    #footer {
+        padding: 25px 20px;
+    }
+}
+
+/* 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    #wrapper {
+        box-shadow: none;
+    }
+    
+    #content-wrapper {
+        padding: 10px;
+    }
+    
+    .header-content {
+        padding: 12px 12px;
+        gap: 10px;
+    }
+    
+    .header-vertical-line {
+        width: 2px;
+    }
+    
+    #header h1 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    
+    #nav a {
+        font-size: 12px;
+    }
+    
+    #nav li.nav-divider {
+        margin: 0 8px;
+        font-size: 12px;
+    }
+    
+    #nav ul {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    
+    #nav li {
+        padding: 8px 0;
+    }
+    
+    #nav a {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    
+    .post {
+        margin-bottom: 15px;
+        border-radius: 6px;
+    }
+    
+    .post-thumbnail {
+        height: 180px;
+    }
+    
+    .post-header {
+        padding: 15px;
+    }
+    
+    .post-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .post-meta {
+        font-size: 12px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .post-body {
+        padding: 0 15px 15px;
+        font-size: 14px;
+    }
+    
+    .post-footer {
+        padding: 12px 15px;
+    }
+    
+    .post-labels a {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+    
+    .read-more {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+    
+    /* 댓글 모바일 스타일 */
+    .comments {
+        padding: 20px 15px;
+    }
+    
+    .comment {
+        padding: 15px;
+    }
+    
+    .comment-body {
+        padding-left: 0;
+    }
+    
+    .sidebar-widget {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+    
+    .sidebar-widget h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .profile-widget img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .profile-name {
+        font-size: 13px;
+    }
+    
+    .profile-description {
+        font-size: 11px;
+    }
+    
+    .search-box input[type="text"] {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .search-box button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    .category-list li,
+    .recent-posts-list li {
+        padding: 10px 0;
+    }
+    
+    .pagination {
+        gap: 5px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+    
+    .pagination a,
+    .pagination span {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    #footer {
+        padding: 20px 15px;
+        font-size: 12px;
+    }
+}
+
+/* 작은 모바일 (360px 이하) */
+@media (max-width: 360px) {
+    .header-content {
+        padding: 10px 10px;
+        gap: 8px;
+    }
+    
+    .header-vertical-line {
+        width: 2px;
+    }
+    
+    #header h1 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    
+    #nav a {
+        font-size: 11px;
+    }
+    
+    #nav li.nav-divider {
+        margin: 0 6px;
+        font-size: 11px;
+    }
+    
+    #nav ul {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    
+    .post-title {
+        font-size: 16px;
+    }
+    
+    .post-body {
+        font-size: 13px;
+    }
+    
+    /* 댓글 모바일 스타일 */
+    .comments {
+        padding: 20px 15px;
+    }
+    
+    .comment {
+        padding: 15px;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .comment-timestamp {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .comment-body {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+    
+    .comment-author-photo,
+    .comment-author-photo-placeholder {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .comment-author-name {
+        font-size: 14px;
+    }
+}
+
+/* 댓글 영역 */
+.comments {
+    background: #fff;
+    border: 1px solid #e4e8eb;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.comments h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f5f6f7;
+}
+
+/* 댓글 입력란 */
+#comment-form {
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: 'Nanum Myeongjo', '나눔명조', serif;
+}
+
+#comment-form h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5f6f7;
+    font-family: 'Nanum Myeongjo', '나눔명조', serif;
+}
+
+#comment-editor {
+    font-size: 14px;
+    font-family: 'Nanum Myeongjo', '나눔명조', serif;
+}
+
+.blogger-iframe-colorize {
+    font-size: 14px;
+    font-family: 'Nanum Myeongjo', '나눔명조', serif;
+}
+
+/* 댓글 아이템 */
+#comments-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment {
+    padding: 20px;
+    border: 1px solid #e4e8eb;
+    border-radius: 8px;
+    background-color: #fafbfc;
+    transition: box-shadow 0.2s;
+}
+
+.comment:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 댓글 헤더 */
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e4e8eb;
+}
+
+.comment-author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 댓글 작성자 프로필 이미지 */
+.comment-author-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #03c75a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-author-photo-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #03c75a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comment-author-initial {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* 댓글 작성자 이름 */
+.comment-author-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-author-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+/* 댓글 작성 시간 */
+.comment-timestamp {
+    font-size: 11px;
+    color: #8b95a1;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* 댓글 본문 */
+.comment-body {
+    color: #505050;
+    line-height: 1.8;
+    font-size: 13px;
+    padding-left: 0px;
+}
+
+.comment-body p {
+    margin: 0 0 10px 0;
+}
+
+.comment-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* 로딩 애니메이션 */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #8b95a1;
+}
+
+    ]]></b:skin>
+
+    <b:template-skin>
+        <b:variable default='960px' name='content.width' type='length'/>
+        <b:variable default='0' name='main.column.left.width' type='length'/>
+        <b:variable default='310px' name='main.column.right.width' type='length'/>
+    </b:template-skin>
+</head>
+
+<body>
+    <div id='wrapper'>
+        <!-- 헤더 -->
+        <div id='header'>
+            <div class='header-vertical-line'></div>
+            <div class='header-content'>
+                <!-- 네비게이션 -->
+                <nav id='nav'>
+                    <ul>
+                        <li><a expr:href='data:blog.homepageUrl'>홈</a></li>
+                        <li class='nav-divider'>|</li>
+                        <li><a href='#hierarchical-categories' class='nav-link'>카테고리</a></li>
+                    </ul>
+                </nav>
+                <!-- 블로그 제목 -->
+                <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+                    <b:widget id='Header1' locked='true' title='블로그 제목 (헤더)' type='Header'>
+                        <b:includable id='main'>
+                            <div class='header-title'>
+                                <h1>
+                                    <a expr:href='data:blog.homepageUrl'><data:title/></a>
+                                </h1>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+            </div>
+        </div>
+
+        <!-- 메인 컨텐츠 영역 -->
+        <div id='content-wrapper'>
+            <!-- 메인 콘텐츠 -->
+            <div id='main'>
+                <b:section class='main' id='main' showaddelement='no'>
+                    <b:widget id='Blog1' locked='true' title='블로그 게시물' type='Blog'>
+                        <b:includable id='main' var='top'>
+                            <b:if cond='data:mobile == &quot;false&quot;'>
+                                <!-- 포스트 목록 -->
+                                <b:loop values='data:posts' var='post'>
+                                    <b:include data='post' name='post'/>
+                                </b:loop>
+                                
+                                <!-- 페이지네이션 -->
+                                <b:include name='nextprev'/>
+                            </b:if>
+                        </b:includable>
+
+                        <b:includable id='post' var='post'>
+                            <div class='post'>
+                                <!-- 포스트 썸네일 이미지 (목록 페이지에서만 표시) -->
+                                <b:if cond='data:post.firstImageUrl and data:blog.pageType != &quot;item&quot;'>
+                                    <div class='post-thumbnail'>
+                                        <a expr:href='data:post.url'>
+                                            <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
+                                        </a>
+                                    </div>
+                                </b:if>
+                                
+                                <div class='post-header'>
+                                    <h2 class='post-title'>
+                                        <b:if cond='data:post.link'>
+                                            <a expr:href='data:post.link'><data:post.title/></a>
+                                        <b:else/>
+                                            <b:if cond='data:post.url'>
+                                                <a expr:href='data:post.url'><data:post.title/></a>
+                                            <b:else/>
+                                                <data:post.title/>
+                                            </b:if>
+                                        </b:if>
+                                    </h2>
+                                    <div class='post-meta'>
+                                        <span>
+                                            <data:post.author/>
+                                        </span>
+                                        <span>
+                                            <data:post.dateHeader/>
+                                        </span>
+                                        <b:if cond='data:post.commentLabelFull'>
+                                            <span>
+                                                <data:post.commentLabelFull/>
+                                            </span>
+                                        </b:if>
+                                    </div>
+                                </div>
+
+                                <div class='post-body'>
+                                    <b:if cond='data:blog.pageType == "item"'>
+                                        <data:post.body/>
+                                    <b:else/>
+                                        <b:if cond='data:post.snippet'>
+                                            <data:post.snippet/>
+                                        <b:else/>
+                                            <data:post.body/>
+                                        </b:if>
+                                    </b:if>
+                                </div>
+
+                                <div class='post-footer'>
+                                    <div class='post-labels'>
+                                        <b:if cond='data:post.labels'>
+                                            <b:loop values='data:post.labels' var='label'>
+                                                <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                                            </b:loop>
+                                        </b:if>
+                                    </div>
+                                    <b:if cond='data:post.hasJumpLink'>
+                                        <a class='read-more' expr:href='data:post.url'>더 읽기 →</a>
+                                    </b:if>
+                                </div>
+                            </div>
+
+                            <!-- 단일 포스트 뷰에서 댓글 표시 -->
+                            <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                                <div class='comments' id='comments'>
+                                    <b:if cond='data:post.allowComments'>
+                                        <h4><data:post.commentLabelFull/></h4>
+                                        <b:include data='post' name='comments'/>
+                                    </b:if>
+                                </div>
+                            </b:if>
+                        </b:includable>
+
+                        <b:includable id='nextprev'>
+                            <div class='pagination'>
+                                <b:include name='previouspagelink'/>
+                                <b:include name='nextpagelink'/>
+                            </div>
+                        </b:includable>
+
+                        <b:includable id='previouspagelink'>
+                            <b:if cond='data:newerPageUrl'>
+                                <a expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'>← 이전 글</a>
+                            </b:if>
+                        </b:includable>
+
+                        <b:includable id='nextpagelink'>
+                            <b:if cond='data:olderPageUrl'>
+                                <a expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'>다음 글 →</a>
+                            </b:if>
+                        </b:includable>
+
+                        <b:includable id='comments' var='post'>
+                            <b:if cond='data:post.numComments != 0'>
+                                <div id='comments-block'>
+                                    <b:loop values='data:post.comments' var='comment'>
+                                        <div class='comment'>
+                                            <div class='comment-header'>
+                                                <div class='comment-author-info'>
+                                                    <b:if cond='data:comment.authorPhoto.url'>
+                                                        <img class='comment-author-photo' expr:alt='data:comment.author' expr:src='data:comment.authorPhoto.url'/>
+                                                    <b:else/>
+                                                        <div class='comment-author-photo-placeholder'>
+                                                            <span class='comment-author-initial'>A</span>
+                                                        </div>
+                                                    </b:if>
+                                                    <div class='comment-author-details'>
+                                                        <div class='comment-author-name'>
+                                                            <data:comment.author/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='comment-timestamp'>
+                                                    <data:comment.timestamp/>
+                                                </div>
+                                            </div>
+                                            <div class='comment-body'>
+                                                <data:comment.body/>
+                                            </div>
+                                        </div>
+                                    </b:loop>
+                                </div>
+                            </b:if>
+                            <b:include name='comment-form'/>
+                        </b:includable>
+
+                        <b:includable id='comment-form'>
+                            <b:if cond='data:post.allowComments'>
+                                <div id='comment-form'>
+                                    <h4>댓글 작성</h4>
+                                    <b:if cond='data:mobile'>
+                                        <data:blogCommentMessage/>
+                                    <b:else/>
+                                        <b:if cond='data:post.commentFormIframeSrc'>
+                                            <iframe allowtransparency='true' class='blogger-iframe-colorize' expr:height='data:cmtIframeInitialHeight ?: &quot;250&quot;' expr:src='data:post.commentFormIframeSrc' frameborder='0' id='comment-editor' name='comment-editor' width='100%'/>
+                                        <b:else/>
+                                            <data:blogCommentMessage/>
+                                        </b:if>
+                                    </b:if>
+                                </div>
+                            </b:if>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+            </div>
+
+            <!-- 사이드바 -->
+            <div id='sidebar'>
+                <b:section class='sidebar' id='sidebar' showaddelement='yes'>
+                    <!-- 프로필 위젯 -->
+                    <b:widget id='Profile1' locked='false' title='프로필' type='Profile'>
+                        <b:includable id='main'>
+                            <div class='sidebar-widget profile-widget'>
+                                <h3><data:title/></h3>
+                                <div class='profile-content'>
+                                    <b:if cond='data:photo.url'>
+                                        <b:if cond='data:userUrl != &quot;&quot;'>
+                                            <a expr:href='data:userUrl' class='profile-image-link'>
+                                                <img expr:alt='data:displayname' expr:src='data:photo.url'/>
+                                            </a>
+                                        <b:else/>
+                                            <div class='profile-image-wrapper'>
+                                                <img expr:alt='data:displayname' expr:src='data:photo.url'/>
+                                            </div>
+                                        </b:if>
+                                    </b:if>
+                                    <div class='profile-info'>
+                                        <div class='profile-name'>
+                                            <data:displayname/>
+                                        </div>
+                                        <div class='profile-description'>
+                                            <data:aboutme/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+
+                    <!-- 검색 위젯 -->
+                    <b:widget id='BlogSearch1' locked='false' title='검색' type='BlogSearch'>
+                        <b:includable id='main'>
+                            <div class='sidebar-widget'>
+                                <h3>블로그 검색</h3>
+                                <form class='search-box' expr:action='data:blog.searchUrl' method='get'>
+                                    <input id='search-input' name='q' placeholder='검색어를 입력하세요' type='text'/>
+                                    <button type='submit'>🔎</button>
+                                </form>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+
+                    <!-- 카테고리 위젯 -->
+                    <b:widget id='Label1' locked='false' title='카테고리' type='Label'>
+                        <b:includable id='main'>
+                            <div class='sidebar-widget'>
+                                <h3><data:title/></h3>
+                                <div id='hierarchical-categories'>
+                                    <ul class='category-list'>
+                                        <b:loop values='data:labels' var='label'>
+                                            <li data-label-name='data:label.name'>
+                                                <a expr:href='data:label.url'>
+                                                    <span><data:label.name/></span>
+                                                    <span class='category-count'>(<data:label.count/>)</span>
+                                                </a>
+                                            </li>
+                                        </b:loop>
+                                    </ul>
+                                </div>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+
+                    <!-- 최근 글 위젯 -->
+                    <b:widget id='BlogArchive1' locked='false' title='최근 글' type='BlogArchive'>
+                        <b:includable id='main'>
+                            <div class='sidebar-widget'>
+                                <h3><data:title/></h3>
+                                <ul class='recent-posts-list'>
+                                    <b:loop values='data:data' var='i'>
+                                        <li>
+                                            <a expr:href='data:i.url'><data:i.name/></a>
+                                            <div class='recent-post-date'>
+                                                <data:i.post-count/>개의 글
+                                            </div>
+                                        </li>
+                                    </b:loop>
+                                </ul>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div id='footer'>
+            <p>© <data:blog.title/>. All rights reserved.</p>
+            <p>Powered by <a href='https://www.blogger.com'>Blogger</a></p>
+        </div>
+    </div>
+
+    <!-- 계층적 카테고리 구조 스크립트 -->
+    <script type='text/javascript'>
+    //<![CDATA[
+    (function() {
+        // 계층적 카테고리 구조 생성
+        function createHierarchicalCategories() {
+            const categoriesContainer = document.getElementById('hierarchical-categories');
+            if (!categoriesContainer) return;
+
+            // JSON feed에서 포스트 데이터 가져오기
+            fetch('/feeds/posts/default?alt=json&max-results=9999')
+                .then(response => response.json())
+                .then(data => {
+                    const posts = data.feed.entry || [];
+                    const categoryHierarchy = {};
+
+                    // 각 포스트의 라벨 분석
+                    posts.forEach(post => {
+                        if (post.category && post.category.length > 0) {
+                            // 모든 라벨을 순회하면서 ">" 구분자로 계층 구조 파싱
+                            post.category.forEach(category => {
+                                const label = category.term;
+                                if (typeof label !== 'string') {
+                                    return;
+                                }
+
+                                if (label.indexOf('>') === -1) {
+                                    return;
+                                }
+
+                                const parts = label.split('>').map(part => part.trim()).filter(Boolean);
+                                if (parts.length < 2) {
+                                    return;
+                                }
+
+                                const rootCategory = parts[0];
+                                const subKey = parts.slice(1).join(' > ');
+
+                                if (!categoryHierarchy[rootCategory]) {
+                                    categoryHierarchy[rootCategory] = {
+                                        count: 0,
+                                        subcategories: {}
+                                    };
+                                }
+
+                                categoryHierarchy[rootCategory].count++;
+
+                                if (!categoryHierarchy[rootCategory].subcategories[subKey]) {
+                                    categoryHierarchy[rootCategory].subcategories[subKey] = {
+                                        count: 0,
+                                        fullLabel: label
+                                    };
+                                }
+                                categoryHierarchy[rootCategory].subcategories[subKey].count++;
+                            });
+                        }
+                    });
+
+                    // 계층 구조 HTML 생성
+                    const categoryList = categoriesContainer.querySelector('.category-list');
+                    if (categoryList && Object.keys(categoryHierarchy).length > 0) {
+                        categoryList.innerHTML = '';
+
+                        Object.keys(categoryHierarchy).sort().forEach(rootCat => {
+                            const rootData = categoryHierarchy[rootCat];
+                            
+                            // 루트 카테고리
+                            const rootLi = document.createElement('li');
+                            rootLi.className = 'category-root';
+                            
+                            const rootLink = document.createElement('a');
+                            rootLink.href = '/search/label/' + encodeURIComponent(rootCat);
+                            
+                            const toggleSpan = document.createElement('span');
+                            toggleSpan.className = 'category-toggle';
+                            toggleSpan.innerHTML = '▼';
+                            
+                            const nameSpan = document.createElement('span');
+                            nameSpan.textContent = rootCat;
+                            
+                            const countSpan = document.createElement('span');
+                            countSpan.className = 'category-count';
+                            countSpan.textContent = '(' + rootData.count + ')';
+                            
+                            rootLink.appendChild(toggleSpan);
+                            rootLink.appendChild(nameSpan);
+                            rootLink.appendChild(countSpan);
+                            rootLi.appendChild(rootLink);
+                            categoryList.appendChild(rootLi);
+
+                            // 서브 카테고리
+                            const subcategories = rootData.subcategories;
+                            if (Object.keys(subcategories).length > 0) {
+                                const subUl = document.createElement('ul');
+                                subUl.className = 'category-subcategories';
+                                subUl.style.maxHeight = '500px'; // 초기 상태는 펼쳐진 상태
+
+                                Object.keys(subcategories).sort().forEach(subCat => {
+                                    const subData = subcategories[subCat];
+                                    const subLi = document.createElement('li');
+                                    subLi.className = 'category-sub';
+                                    
+                                    const subLink = document.createElement('a');
+                                    // 전체 라벨로 검색 (예: "일본>2024 홋카이도")
+                                    subLink.href = '/search/label/' + encodeURIComponent(subData.fullLabel || subCat);
+                                    
+                                    const subNameSpan = document.createElement('span');
+                                    subNameSpan.textContent = subCat;
+                                    
+                                    const subCountSpan = document.createElement('span');
+                                    subCountSpan.className = 'category-count';
+                                    subCountSpan.textContent = '(' + subData.count + ')';
+                                    
+                                    subLink.appendChild(subNameSpan);
+                                    subLink.appendChild(subCountSpan);
+                                    subLi.appendChild(subLink);
+                                    subUl.appendChild(subLi);
+                                });
+
+                                categoryList.appendChild(subUl);
+
+                                // 토글 기능 추가
+                                rootLink.addEventListener('click', function(e) {
+                                    if (e.target.className === 'category-toggle' || e.target.parentElement.className === 'category-toggle') {
+                                        e.preventDefault();
+                                        rootLi.classList.toggle('collapsed');
+                                        
+                                        if (rootLi.classList.contains('collapsed')) {
+                                            subUl.style.maxHeight = '0';
+                                        } else {
+                                            subUl.style.maxHeight = '500px';
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.log('카테고리 구조 생성 중 오류:', error);
+                });
+        }
+
+        // DOM 로딩 완료 후 실행
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', createHierarchicalCategories);
+        } else {
+            createHierarchicalCategories();
+        }
+
+        // 부드러운 스크롤 기능
+        function initSmoothScroll() {
+            document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+        }
+
+        // DOM 로딩 완료 후 부드러운 스크롤 초기화
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSmoothScroll);
+        } else {
+            initSmoothScroll();
+        }
+    })();
+    //]]>
+    </script>
+</body>
+</html>
+
