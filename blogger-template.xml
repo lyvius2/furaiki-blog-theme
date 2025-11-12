@@ -5,6 +5,7 @@
     <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
     <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0' name='viewport'/>
     <link href='https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;display=swap' rel='stylesheet'/>
     <b:include data='blog' name='all-head-content'/>
     <title><data:blog.pageTitle/></title>
     
@@ -128,7 +129,7 @@ a:hover {
     padding: 0;
     display: block;
     text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-family: 'Nanum Gothic', '나눔고딕', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     transition: color 0.2s;
 }
 
@@ -143,7 +144,7 @@ a:hover {
 }
 
 #header h1 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-family: 'Nanum Gothic', '나눔고딕', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 24px;
     font-weight: 400;
     margin: 0;
@@ -296,6 +297,11 @@ a:hover {
 #sidebar {
     width: 300px;
     flex-shrink: 0;
+    font-family: 'Nanum Gothic', '나눔고딕', sans-serif;
+}
+
+#sidebar * {
+    font-family: 'Nanum Gothic', '나눔고딕', sans-serif;
 }
 
 .sidebar-widget {
