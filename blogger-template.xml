@@ -492,6 +492,87 @@ a:hover {
     margin-top: 5px;
 }
 
+/* 페이지 리스트 */
+#PageList1,
+.PageList,
+#Translate1,
+.Translate {
+    background: #fff;
+    border: 1px solid #e4e8eb;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    font-family: 'Nanum Gothic', '나눔고딕', sans-serif;
+}
+
+#PageList1 h2,
+.PageList h2,
+#Translate1 h2,
+.Translate h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f5f6f7;
+}
+
+#PageList1 ul,
+.PageList ul,
+#PageList1 .widget-content ul,
+.PageList .widget-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#PageList1 li,
+.PageList li,
+#PageList1 .widget-content li,
+.PageList .widget-content li {
+    border-bottom: none;
+    padding: 3px 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+#PageList1 li:before,
+.PageList li:before,
+#PageList1 .widget-content li:before,
+.PageList .widget-content li:before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: #505050;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#PageList1 li:last-child,
+.PageList li:last-child,
+#PageList1 .widget-content li:last-child,
+.PageList .widget-content li:last-child {
+    border-bottom: none;
+}
+
+#PageList1 a,
+.PageList a,
+#PageList1 .widget-content a,
+.PageList .widget-content a {
+    color: #333;
+    font-size: 13px;
+    display: block;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#PageList1 a:hover,
+.PageList a:hover,
+#PageList1 .widget-content a:hover,
+.PageList .widget-content a:hover {
+    color: #03c75a;
+}
+
 /* 검색 박스 */
 .search-box {
     display: flex;
@@ -1154,8 +1235,8 @@ a:hover {
 
                         <b:includable id='post' var='post'>
                             <div class='post'>
-                                <!-- 포스트 썸네일 이미지 (목록 페이지에서만 표시) -->
-                                <b:if cond='data:post.firstImageUrl and data:blog.pageType != &quot;item&quot;'>
+                                <!-- 포스트 썸네일 이미지 (목록 페이지에서만 표시, 페이지는 제외) -->
+                                <b:if cond='data:post.firstImageUrl and data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
                                     <div class='post-thumbnail'>
                                         <a expr:href='data:post.url'>
                                             <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
@@ -1182,7 +1263,7 @@ a:hover {
                                         <span>
                                             <data:post.dateHeader/>
                                         </span>
-                                        <b:if cond='data:post.commentLabelFull'>
+                                        <b:if cond='data:post.commentLabelFull and data:blog.pageType != &quot;static_page&quot;'>
                                             <span>
                                                 <data:post.commentLabelFull/>
                                             </span>
@@ -1191,7 +1272,7 @@ a:hover {
                                 </div>
 
                                 <div class='post-body'>
-                                    <b:if cond='data:blog.pageType == "item"'>
+                                    <b:if cond='data:blog.pageType == "item" or data:blog.pageType == "static_page"'>
                                         <data:post.body/>
                                     <b:else/>
                                         <b:if cond='data:post.snippet'>
@@ -1210,13 +1291,13 @@ a:hover {
                                             </b:loop>
                                         </b:if>
                                     </div>
-                                    <b:if cond='data:blog.pageType != "item"'>
+                                    <b:if cond='data:blog.pageType != "item" and data:blog.pageType != "static_page"'>
                                         <a class='read-more' expr:href='data:post.url'>더 읽기 →</a>
                                     </b:if>
                                 </div>
                             </div>
 
-                            <!-- 단일 포스트 뷰에서 댓글 표시 -->
+                            <!-- 단일 포스트 뷰에서 댓글 표시 (페이지는 제외) -->
                             <b:if cond='data:blog.pageType == &quot;item&quot;'>
                                 <div class='comments' id='comments'>
                                     <b:if cond='data:post.allowComments'>
@@ -1572,6 +1653,7 @@ a:hover {
         } else {
             initSmoothScroll();
         }
+
     })();
     //]]>
     </script>
